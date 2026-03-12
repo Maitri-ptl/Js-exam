@@ -23,7 +23,12 @@ body {
 }
 
 .add-pro {
+    background: var(--bg);
     font-size: 22px;
+}
+
+#form{
+    background: var(--text);
 }
 
 .add-btn {
@@ -36,9 +41,3 @@ body {
     color: #000;
 
 }
-
-/* .sort ul li {
-    background: #fff;
-    color: #000;
-    border-radius: 2;
-} */

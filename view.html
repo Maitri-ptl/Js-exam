@@ -41,8 +41,9 @@
                         </li>
                     </ul>
                     <form class="d-flex" role="search">
-                        <input class="form-control me-2 " type="search" placeholder="Search" aria-label="Search" />
-                        <button class="btn btn-outline-success search" type="submit">Search</button>
+                        <input class="form-control me-2 " type="search" id="search" placeholder="Search"
+                            aria-label="Search" />
+                        <button class="btn btn-outline-success" type="submit">Search</button>
                     </form>
                 </div>
             </div>
@@ -57,7 +58,7 @@
                     <div class="sort">
                         <ul class="list-unstyled d-flex">
                             <li class="sort-category mt-1">
-                                <select id="productCategory" name="category" class="form-control my-1">
+                                <select id="Category" name="category" class="form-control my-1">
                                     <option selected disabled>Select Category </option>
                                     <option value="Electronics">Electronics</option>
                                     <option value="Home & Garden">Home & Garden</option>
@@ -74,7 +75,6 @@
                                     Low</button></li>
                             <li id="L-H"><button type="button" class="btn mt-2 mx-2 rounded-3 bg-white">Price: Low to
                                     High</button></li>
-                            <li><button type="reset" class="btn mt-2 mx-2 rounded-3 bg-white">Reset</button></li>
                         </ul>
                     </div>
                     <thead>

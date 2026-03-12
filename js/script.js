@@ -1,7 +1,7 @@
 const inputs = document.querySelectorAll('#productForm .form-control');
 const form = document.querySelector('#productForm');
 const viewTable = document.querySelector('#viewTable tbody');
-const search = document.querySelector('.search input[type="search"]');
+const search = document.querySelector('#search');
 let data = {};
 let list = JSON.parse(localStorage.getItem('list')) || [];
 const editData = JSON.parse(localStorage.getItem('editData')) || {};
@@ -9,18 +9,29 @@ let atoz = document.getElementById('a-z');
 let ztoa = document.getElementById('z-a');
 let hightolow = document.getElementById('H-L');
 let lowtohigh = document.getElementById('L-H');
-let resetBtn = document.getElementById("reset");
- 
+const category = document.querySelector('.category')
 
-search?.addEventListener('input', (e) => {
-    // console.log(e);
-    const { value } = e.target;
+if (search) {
+    search?.addEventListener('input', (e) => {
 
-    let newList = list.filter(item =>
-        item.name.toLowerCase().includes(value.toLowerCase()))
-        handleView(newList)
+        const { value } = e.target;
+        let newList = list.filter(item => {
+            item.name?.toLowerCase().includes(value.toLowerCase())
+        });
+        handleView(newList);
+    });
+}
+
+if (category) {
+    category?.addEventListener('change', (e) => {
+        const { value } = e.target;
+
+        let newList = list.filter(item => {
+            item.category.toLowerCase().includes(value.toLowerCase())
+        })
+        handleView(newList);
     })
-
+}
 
 inputs.forEach((input) => {
     input.addEventListener('input', (e) => {
@@ -121,34 +132,30 @@ hightolow?.addEventListener("click", () => {
     sortProducts("hightolow")
 })
 
-resetBtn?.addEventListener("click", () => {
-    handleView(list);
-});
-
 const sortProducts = (sort) => {
 
     let sortedList;
 
-    if(sort === "atoz"){
-        sortedList = [...list].sort((a,b)=> 
+    if (sort === "atoz") {
+        sortedList = [...list].sort((a, b) =>
             a.name.localeCompare(b.name)
         );
     }
 
-    else if(sort === "ztoa"){
-        sortedList = [...list].sort((a,b)=> 
+    else if (sort === "ztoa") {
+        sortedList = [...list].sort((a, b) =>
             b.name.localeCompare(a.name)
         );
     }
 
-    else if(sort === "lowtohigh"){
-        sortedList = [...list].sort((a,b)=> 
+    else if (sort === "lowtohigh") {
+        sortedList = [...list].sort((a, b) =>
             a.price - b.price
         );
     }
 
-    else if(sort === "hightolow"){
-        sortedList = [...list].sort((a,b)=> 
+    else if (sort === "hightolow") {
+        sortedList = [...list].sort((a, b) =>
             b.price - a.price
         );
     }
