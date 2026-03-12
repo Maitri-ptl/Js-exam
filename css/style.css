@@ -1,0 +1,44 @@
+:root {
+    --bg: #f5b2b2;
+    --text: #8BA888;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--text);
+}
+
+.logo {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.logo span {
+    color: #e58e8e;
+    font-size: 30px;
+}
+
+.add-pro {
+    font-size: 22px;
+}
+
+.add-btn {
+    background: #ffffff7f;
+    color: #000;
+}
+
+.add-btn:hover {
+    background: #fff;
+    color: #000;
+
+}
+
+/* .sort ul li {
+    background: #fff;
+    color: #000;
+    border-radius: 2;
+} */
