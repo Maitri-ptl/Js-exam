@@ -9,29 +9,21 @@ let atoz = document.getElementById('a-z');
 let ztoa = document.getElementById('z-a');
 let hightolow = document.getElementById('H-L');
 let lowtohigh = document.getElementById('L-H');
-const category = document.querySelector('.category')
+// const category = document.querySelector('.category')
 
-if (search) {
-    search?.addEventListener('input', (e) => {
 
-        const { value } = e.target;
-        let newList = list.filter(item => {
-            item.name?.toLowerCase().includes(value.toLowerCase())
-        });
-        handleView(newList);
-    });
-}
+search?.addEventListener('input',(e)=>{
+    const {value} = e.target;
 
-if (category) {
-    category?.addEventListener('change', (e) => {
-        const { value } = e.target;
-
-        let newList = list.filter(item => {
-            item.category.toLowerCase().includes(value.toLowerCase())
-        })
-        handleView(newList);
+    let newList = list.filter((item)=>{
+        if(item.name?.toLowerCase().includes(value.toLowerCase())|| 
+            item.category?.toLowerCase().includes(value.toLowerCase()))
+        {
+            return item;
+        }
     })
-}
+    handleView(newList)
+})
 
 inputs.forEach((input) => {
     input.addEventListener('input', (e) => {

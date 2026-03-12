@@ -1,1 +1,8 @@
-# Js-exam
+![alt text](<img/A to Z.png>) 
+![alt text](<img/High to Low.png>) 
+![alt text](img/image1.png) 
+![alt text](img/image2.png) 
+![alt text](img/image3.png) 
+![alt text](<img/Low to High.png>) 
+![alt text](<img/onsearch (name and category).png>) 
+![alt text](<img/Z to A.png>)
